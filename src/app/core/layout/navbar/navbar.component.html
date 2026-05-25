@@ -1,0 +1,39 @@
+<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+
+    <div class="text-3xl font-extrabold text-orange-500 tracking-wide">
+      FoodOrdering Task
+    </div>
+
+    <div class="hidden md:flex items-center gap-8 font-medium">
+      <a routerLink="/" class="hover:text-orange-500 transition">Home</a>
+      <a routerLink="/menu" class="hover:text-orange-500 transition">Menu</a>
+      <a routerLink="/orders" class="hover:text-orange-500 transition">Orders</a>
+      <a routerLink="/admin" class="hover:text-orange-500 transition">Dashboard</a>
+    </div>
+
+    <div class="flex items-center gap-5">
+<button
+  routerLink="/cart"
+  class="relative"
+>
+
+  <i class="bi bi-cart3 text-2xl"></i>
+
+  <span
+    class="absolute -top-2 -right-2 bg-red-500 text-white w-5 h-5 rounded-full text-xs flex items-center justify-center"
+  >
+    {{cartService.getCartCount()}}
+  </span>
+
+</button>
+      <button class="gradient-btn hidden md:block">
+        Login
+      </button>
+          <button class="gradient-btn hidden md:block">
+        Register
+      </button>
+
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,72 @@
+<section class="container mx-auto px-6 py-32">
+
+  <h1 class="text-5xl font-black mb-10">
+    Your Orders
+  </h1>
+
+  <!-- EMPTY STATE -->
+  <div
+    *ngIf="orders.length === 0"
+    class="bg-white rounded-3xl p-10 text-center shadow-lg"
+  >
+    <h2 class="text-3xl font-black text-gray-700">
+      No orders yet
+    </h2>
+    <p class="text-gray-500 mt-4">
+      Go add some delicious meals 🍔
+    </p>
+  </div>
+
+  <!-- ORDERS -->
+  <div
+    *ngFor="let order of orders; let oi = index"
+    class="bg-white rounded-3xl shadow-lg p-8 mb-10"
+  >
+
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-black">
+        Order #{{oi + 1}}
+      </h2>
+
+      <span class="text-orange-500 font-black text-xl">
+        Total: ${{order.total}}
+      </span>
+    </div>
+
+    <!-- ITEMS -->
+    <div
+      *ngFor="let item of order.items"
+      class="flex items-center justify-between border-b py-4"
+    >
+
+      <div class="flex items-center gap-5">
+
+        <img
+          [src]="item.image"
+          class="w-24 h-24 rounded-2xl object-cover"
+        />
+
+        <div>
+          <h3 class="text-xl font-bold">
+            {{item.name}}
+          </h3>
+
+          <p class="text-gray-500">
+            ${{item.price}}
+          </p>
+        </div>
+
+      </div>
+
+      <button
+        routerLink="/cart"
+        class="bg-orange-500 text-white px-4 py-2 rounded-xl"
+      >
+        Show in Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
