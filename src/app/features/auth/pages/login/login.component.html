@@ -1,20 +1,39 @@
-<input
-  type="email"
-  [(ngModel)]="email"
-  placeholder="Email"
-  class="w-full p-4 border rounded-2xl"
-/>
+<div class="min-h-screen flex items-center justify-center bg-orange-50">
 
-<input
-  type="password"
-  [(ngModel)]="password"
-  placeholder="Password"
-  class="w-full p-4 border rounded-2xl"
-/>
+  <div class="w-full max-w-md bg-white p-10 rounded-3xl shadow-xl">
 
-<button
-  (click)="login()"
-  class="w-full bg-orange-500 text-white p-4 rounded-2xl"
->
-  Login
-</button>
+    <h2 class="text-4xl font-black text-center mb-8 text-gray-800">
+Login
+    </h2>
+
+    <input
+      type="email"
+      [(ngModel)]="email"
+      placeholder="Email"
+      class="w-full p-4 mb-4 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+    />
+
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Password"
+      class="w-full p-4 mb-6 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+    />
+
+    <button
+      (click)="login()"
+      class="w-full bg-orange-500 hover:bg-orange-600 transition text-white p-4 rounded-2xl font-bold shadow-lg"
+    >
+      Login
+    </button>
+
+    <p class="text-center text-gray-500 mt-6">
+      Don’t have an account?
+      <a routerLink="/register" class="text-orange-500 font-bold">
+        Register
+      </a>
+    </p>
+
+  </div>
+
+</div>

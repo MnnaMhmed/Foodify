@@ -1,1 +1,46 @@
-<p>register works!</p>
+<div class="min-h-screen flex items-center justify-center bg-orange-50">
+
+  <div class="w-full max-w-md bg-white p-10 rounded-3xl shadow-xl">
+
+    <h2 class="text-4xl font-black text-center mb-8 text-gray-800">
+      Create Account 
+    </h2>
+
+    <input
+      type="text"
+      [(ngModel)]="name"
+      placeholder="Full Name"
+      class="w-full p-4 mb-4 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+    />
+
+    <input
+      type="email"
+      [(ngModel)]="email"
+      placeholder="Email"
+      class="w-full p-4 mb-4 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+    />
+
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Password"
+      class="w-full p-4 mb-6 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+    />
+
+    <button
+      (click)="register()"
+      class="w-full bg-orange-500 hover:bg-orange-600 transition text-white p-4 rounded-2xl font-bold shadow-lg"
+    >
+      Register
+    </button>
+
+    <p class="text-center text-gray-500 mt-6">
+      Already have an account?
+      <a routerLink="/login" class="text-orange-500 font-bold">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+</div>
